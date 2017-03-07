@@ -19,14 +19,15 @@
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'applicants', {
       title: 'List Applicants',
-      state: 'applicants.list'
+      state: 'applicants.list',
+      roles: ['user']
     });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'applicants', {
       title: 'Create Applicant',
       state: 'applicants.create',
-      roles: ['user']
+      roles: ['*']
     });
   }
 }());

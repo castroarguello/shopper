@@ -16,29 +16,29 @@
       })
       .state('applicants.list', {
         url: '',
-        templateUrl: 'modules/applicants/client/views/list-applicants.client.view.html',
+        templateUrl: '/modules/applicants/client/views/list-applicants.client.view.html',
         controller: 'ApplicantsListController',
         controllerAs: 'vm',
         data: {
+          roles: ['user', 'admin'],
           pageTitle: 'Applicants List'
         }
       })
       .state('applicants.create', {
         url: '/create',
-        templateUrl: 'modules/applicants/client/views/form-applicant.client.view.html',
+        templateUrl: '/modules/applicants/client/views/form-applicant.client.view.html',
         controller: 'ApplicantsController',
         controllerAs: 'vm',
         resolve: {
           applicantResolve: newApplicant
         },
         data: {
-          roles: ['user', 'admin'],
           pageTitle: 'Applicants Create'
         }
       })
       .state('applicants.edit', {
         url: '/:applicantId/edit',
-        templateUrl: 'modules/applicants/client/views/form-applicant.client.view.html',
+        templateUrl: '/modules/applicants/client/views/form-applicant.client.view.html',
         controller: 'ApplicantsController',
         controllerAs: 'vm',
         resolve: {
@@ -51,7 +51,7 @@
       })
       .state('applicants.view', {
         url: '/:applicantId',
-        templateUrl: 'modules/applicants/client/views/view-applicant.client.view.html',
+        templateUrl: '/modules/applicants/client/views/view-applicant.client.view.html',
         controller: 'ApplicantsController',
         controllerAs: 'vm',
         resolve: {
