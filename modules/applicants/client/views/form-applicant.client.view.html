@@ -5,20 +5,28 @@
   <div class="col-md-12">
     <form name="vm.form.applicantForm" class="form-horizontal" ng-submit="vm.save(vm.form.applicantForm.$valid)" novalidate>
       <fieldset>
-        <div class="form-group well" ng-if="vm.authentication.user && vm.applicant_id">
-          <label class="control-label" for="name">Workflow Status</label>
-          <select class="form-control"
-            ng-model="vm.applicant.status">
-            <option ng-repeat="workflow in vm.workflows"
-            value="{{workflow.id}}">{{workflow.name}}</option>
-           </select>
-          <div ng-messages="vm.form.applicantForm.status.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Shopper status is required.</p>
+        <div class="well row">
+          <div class="form-group col-md-12" ng-if="vm.authentication.user && vm.applicant._id">
+            <label class="control-label" for="name">Workflow Status</label>
+            <select class="form-control"
+              ng-model="vm.applicant.status">
+              <option ng-repeat="workflow in vm.workflows"
+              value="{{workflow.id}}">{{workflow.name}}</option>
+             </select>
+            <div ng-messages="vm.form.applicantForm.status.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Shopper status is required.</p>
+            </div>
           </div>
-          <p> </p>
-          <p>
+          <div class="form-group col-md-12" show-errors>
+            <label class="control-label" for="date">Date Created</label>
+            <input name="date" type="text" ng-model="vm.applicant.date" id="date" class="form-control" placeholder="Date Created" required>
+            <div ng-messages="vm.form.applicantForm.date.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Date is required.</p>
+            </div>
+          </div>
+          <div>
             <button type="submit" class="btn btn-default">{{vm.applicant._id ? 'Update' : 'Create'}}</button>
-          </p>
+          </div>
         </div>
         <div class="form-group" show-errors>
           <label class="control-label" for="name">First Name</label>

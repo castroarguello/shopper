@@ -24,11 +24,11 @@
     });
 
     // Add the dropdown list item
-    // menuService.addSubMenuItem('topbar', 'applicants', {
-    //   title: 'My Applications',
-    //   state: 'applicants.my',
-    //   roles: ['*']
-    // });
+    menuService.addSubMenuItem('topbar', 'applicants', {
+      title: 'Analytics',
+      state: 'applicants.analytics',
+      roles: ['user']
+    });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'applicants', {

@@ -27,9 +27,19 @@
         template: '<ui-view/>'
       })
       .state('applicants.list', {
-        url: '',
+        url: '/list',
         templateUrl: '/modules/applicants/client/views/list-applicants.client.view.html',
         controller: 'ApplicantsListController',
+        controllerAs: 'vm',
+        data: {
+          roles: ['user', 'admin'],
+          pageTitle: 'Applicants List'
+        }
+      })
+      .state('applicants.analytics', {
+        url: '/analytics',
+        templateUrl: '/modules/applicants/client/views/analytics-applicants.client.view.html',
+        controller: 'ApplicantsAnalyticsController',
         controllerAs: 'vm',
         data: {
           roles: ['user', 'admin'],

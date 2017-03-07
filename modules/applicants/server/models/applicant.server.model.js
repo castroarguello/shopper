@@ -56,6 +56,10 @@ var ApplicantSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  date: {
+    type: Date,
+    default: Date.now
+  },
   user: {
     type: Schema.ObjectId,
     ref: 'User'

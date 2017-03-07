@@ -107,6 +107,7 @@ exports.funnels = function(req, res) {
       var response = workflows.map(function(d) {
         return {
           count: 0,
+          date: d.date,
           status: d.id,
           label: d.name
         };
