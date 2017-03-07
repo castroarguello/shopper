@@ -12,6 +12,9 @@ module.exports = function(app) {
     .get(applicants.list)
     .post(applicants.create);
 
+  app.route('/funnels.json').all(applicantsPolicy.isAllowed)
+    .get(applicants.funnels);
+
   app.route('/api/applicants/:applicantId').all(applicantsPolicy.isAllowed)
     .get(applicants.read)
     .put(applicants.update)

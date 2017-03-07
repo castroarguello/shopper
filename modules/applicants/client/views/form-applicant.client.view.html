@@ -5,7 +5,7 @@
   <div class="col-md-12">
     <form name="vm.form.applicantForm" class="form-horizontal" ng-submit="vm.save(vm.form.applicantForm.$valid)" novalidate>
       <fieldset>
-        <div class="form-group well" ng-if="vm.authentication.user">
+        <div class="form-group well" ng-if="vm.authentication.user && vm.applicant_id">
           <label class="control-label" for="name">Workflow Status</label>
           <select class="form-control"
             ng-model="vm.applicant.status">

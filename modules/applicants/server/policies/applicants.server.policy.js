@@ -27,6 +27,9 @@ exports.invokeRolesPolicies = function () {
       resources: '/api/applicants',
       permissions: ['get', 'post']
     }, {
+      resources: '/funnels.json',
+      permissions: ['get']
+    }, {
       resources: '/api/applicants/:applicantId',
       permissions: ['get']
     }]
