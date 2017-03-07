@@ -9,6 +9,18 @@
 
   function routeConfig($stateProvider) {
     $stateProvider
+      .state('landing', {
+        url: '/',
+        templateUrl: '/modules/applicants/client/views/form-applicant.client.view.html',
+        controller: 'ApplicantsController',
+        controllerAs: 'vm',
+        resolve: {
+          applicantResolve: newApplicant
+        },
+        data: {
+          pageTitle: 'Applicants Create'
+        }
+      })
       .state('applicants', {
         abstract: true,
         url: '/applicants',
