@@ -45,7 +45,7 @@
           applicantResolve: getApplicant
         },
         data: {
-          roles: ['user', 'admin'],
+          // roles: ['*'],
           pageTitle: 'Edit Applicant {{ applicantResolve.name }}'
         }
       })

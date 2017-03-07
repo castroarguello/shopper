@@ -53,6 +53,11 @@ exports.isAllowed = function (req, res, next) {
     return next();
   }
 
+  // Allow for editing own applications
+  if (req.applicant) {
+    return next();
+  }
+
   // Check for user roles
   acl.areAnyRolesAllowed(roles, req.route.path, req.method.toLowerCase(), function (err, isAllowed) {
     if (err) {
