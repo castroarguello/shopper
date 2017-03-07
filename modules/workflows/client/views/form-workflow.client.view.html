@@ -1,0 +1,31 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.workflow._id ? 'Edit Workflow' : 'New Workflow'}} Status</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.workflowForm" class="form-horizontal" ng-submit="vm.save(vm.form.workflowForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="id">Status ID</label>
+          <input name="id" type="text" ng-model="vm.workflow.id" id="id" class="form-control" placeholder="Workflow ID" required>
+          <div ng-messages="vm.form.workflowForm.id.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Workflow ID is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Status Name</label>
+          <input name="name" type="text" ng-model="vm.workflow.name" id="name" class="form-control" placeholder="StatusName" required>
+          <div ng-messages="vm.form.workflowForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Workflow name is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.workflow._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
