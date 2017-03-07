@@ -13,7 +13,7 @@
         <span ng-if="applicant.user" ng-bind="applicant.user.displayName"></span>
         <span ng-if="!applicant.user">Anonymous User</span>
       </small>
-      <h4 class="list-group-item-heading" ng-bind="applicant.name"></h4>
+      <h4 class="list-group-item-heading">{{applicant.name}} {{applicant.lastname}}</h4>
       <p>[{{applicant.status}}]</p>
     </a>
   </div>
