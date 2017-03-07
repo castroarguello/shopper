@@ -16,6 +16,42 @@ var ApplicantSchema = new Schema({
     required: 'Please fill Applicant name',
     trim: true
   },
+  name: {
+    type: String,
+    default: '',
+    required: 'Please fill Applicant name',
+    trim: true
+  },
+  lastname: {
+    type: String,
+    default: '',
+    required: 'Please fill Applicant last name',
+    trim: true
+  },
+  phone: {
+    type: String,
+    default: '',
+    required: 'Please fill Applicant phone',
+    trim: true
+  },
+  email: {
+    type: String,
+    default: '',
+    required: 'Please fill Applicant email',
+    trim: true
+  },
+  zipcode: {
+    type: String,
+    default: '',
+    required: 'Please fill Applicant zipcode',
+    trim: true
+  },
+  referral: {
+    type: String,
+    default: '',
+    required: 'Please fill Applicant referral',
+    trim: true
+  },
   created: {
     type: Date,
     default: Date.now

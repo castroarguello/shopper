@@ -1,15 +1,50 @@
 <section>
   <div class="page-header">
-    <h1>{{vm.applicant._id ? 'Edit Applicant' : 'New Applicant'}}</h1>
+    <h1>{{vm.applicant._id ? 'Edit Shopper' : 'Shopper Signup'}}</h1>
   </div>
   <div class="col-md-12">
     <form name="vm.form.applicantForm" class="form-horizontal" ng-submit="vm.save(vm.form.applicantForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Name</label>
-          <input name="name" type="text" ng-model="vm.applicant.name" id="name" class="form-control" placeholder="Name" required>
+          <label class="control-label" for="name">First Name</label>
+          <input name="name" type="text" ng-model="vm.applicant.name" id="name" class="form-control" placeholder="First Name" required>
           <div ng-messages="vm.form.applicantForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Applicant name is required.</p>
+            <p class="help-block error-text" ng-message="required">Shopper name is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="lastname">Last Name</label>
+          <input name="lastname" type="text" ng-model="vm.applicant.lastname" id="lastname" class="form-control" placeholder="Last Name" required>
+          <div ng-messages="vm.form.applicantForm.lastname.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Shopper lastname is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="phone">Phone</label>
+          <input name="phone" type="text" ng-model="vm.applicant.phone" id="phone" class="form-control" placeholder="Phone" required>
+          <div ng-messages="vm.form.applicantForm.phone.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Shopper phone is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="email">Email</label>
+          <input name="email" type="text" ng-model="vm.applicant.email" id="email" class="form-control" placeholder="Email" required>
+          <div ng-messages="vm.form.applicantForm.email.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Shopper email is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="zipcode">Zipcode</label>
+          <input name="zipcode" type="text" ng-model="vm.applicant.zipcode" id="zipcode" class="form-control" placeholder="Zipcode" required>
+          <div ng-messages="vm.form.applicantForm.zipcode.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Shopper zipcode is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="referral">Referral</label>
+          <input name="referral" type="text" ng-model="vm.applicant.referral" id="referral" class="form-control" placeholder="Referral" required>
+          <div ng-messages="vm.form.applicantForm.referral.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Shopper referral is required.</p>
           </div>
         </div>
         <div class="form-group">

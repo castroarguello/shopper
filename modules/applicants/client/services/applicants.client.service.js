@@ -9,7 +9,7 @@
   ApplicantsService.$inject = ['$resource'];
 
   function ApplicantsService($resource) {
-    return $resource('api/applicants/:applicantId', {
+    return $resource('/api/applicants/:applicantId', {
       applicantId: '@_id'
     }, {
       update: {
