@@ -20,3 +20,10 @@ $ git clone https://github.com/meanjs/mean.git meanjs
 $ docker-compose build && docker-compose up
 ```
 
+
+## Create Applicants module with yoeman
+
+```bash
+$ yo meanjs:crud-module applicants
+```
+
