@@ -1,6 +1,6 @@
 <section>
   <div class="page-header">
-    <h1 ng-bind="vm.applicant.name"></h1>
+    <h1>{{vm.applicant.name}} {{vm.applicant.lastname}}</h1>
   </div>
   <div class="pull-right"
        ng-show="vm.applicant.isCurrentUserOwner">
@@ -13,13 +13,17 @@
     </a>
   </div>
   <small>
+    <p>Phone: {{vm.applicant.phone}}</p>
+    <p>Email: {{vm.applicant.email}}</p>
+    <p>Zipcode: {{vm.applicant.zipcode}}</p>
+    <p>Referral: {{vm.applicant.referral}}</p>
     <em class="text-muted">
       Posted on
       <span ng-bind="vm.applicant.created | date:'mediumDate'"></span>
       by
       <span ng-if="vm.applicant.user"
             ng-bind="vm.applicant.user.displayName"></span>
-      <span ng-if="!vm.applicant.user">Deleted User</span>
+      <span ng-if="!vm.applicant.user">Anonymous User</span>
     </em>
   </small>
   <p class="lead" ng-bind="vm.applicant.content"></p>
