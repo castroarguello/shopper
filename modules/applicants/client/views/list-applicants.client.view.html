@@ -14,6 +14,7 @@
         <span ng-if="!applicant.user">Anonymous User</span>
       </small>
       <h4 class="list-group-item-heading" ng-bind="applicant.name"></h4>
+      <p>[{{applicant.status}}]</p>
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.applicants.$resolved && !vm.applicants.length">

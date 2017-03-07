@@ -6,9 +6,10 @@
     .module('applicants')
     .controller('ApplicantsController', ApplicantsController);
 
-  ApplicantsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'applicantResolve'];
+  ApplicantsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'applicantResolve',
+    'WorkflowsService'];
 
-  function ApplicantsController ($scope, $state, $window, Authentication, applicant) {
+  function ApplicantsController ($scope, $state, $window, Authentication, applicant, WorkflowsService) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -17,6 +18,7 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
+    vm.workflows = WorkflowsService.query();
 
     // Remove existing Applicant
     function remove() {

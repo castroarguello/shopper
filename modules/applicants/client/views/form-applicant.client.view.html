@@ -5,6 +5,17 @@
   <div class="col-md-12">
     <form name="vm.form.applicantForm" class="form-horizontal" ng-submit="vm.save(vm.form.applicantForm.$valid)" novalidate>
       <fieldset>
+        <div class="form-group" ng-if="vm.authentication.user">
+          <label class="control-label" for="name">Workflow Status</label>
+          <select class="form-control"
+            ng-model="vm.applicant.status">
+            <option ng-repeat="workflow in vm.workflows"
+            value="{{workflow.id}}">{{workflow.name}}</option>
+           </select>
+          <div ng-messages="vm.form.applicantForm.status.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Shopper status is required.</p>
+          </div>
+        </div>
         <div class="form-group" show-errors>
           <label class="control-label" for="name">First Name</label>
           <input name="name" type="text" ng-model="vm.applicant.name" id="name" class="form-control" placeholder="First Name" required>

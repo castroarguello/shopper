@@ -52,6 +52,12 @@ var ApplicantSchema = new Schema({
     required: 'Please fill Applicant referral',
     trim: true
   },
+  status: {
+    type: String,
+    default: 'applied',
+    required: '',
+    trim: true
+  },
   created: {
     type: Date,
     default: Date.now
