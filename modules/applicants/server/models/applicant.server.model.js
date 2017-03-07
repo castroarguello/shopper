@@ -16,12 +16,6 @@ var ApplicantSchema = new Schema({
     required: 'Please fill Applicant name',
     trim: true
   },
-  name: {
-    type: String,
-    default: '',
-    required: 'Please fill Applicant name',
-    trim: true
-  },
   lastname: {
     type: String,
     default: '',

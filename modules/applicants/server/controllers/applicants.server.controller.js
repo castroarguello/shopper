@@ -104,12 +104,12 @@ exports.funnels = function(req, res) {
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      var response = workflows.map(function(d){
+      var response = workflows.map(function(d) {
         return {
           count: 0,
           status: d.id,
-          label: d.name,
-        }
+          label: d.name
+        };
       });
       res.jsonp(response);
     }
