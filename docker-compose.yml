@@ -2,8 +2,9 @@ version: '2'
 services:
   web:
     restart: always
-    build: .
-    container_name: meanjs
+    image: meanjs/mean
+    # build: .
+    # container_name: meanjs
     ports:
      - "3000:3000"
      - "5858:5858"
@@ -17,7 +18,8 @@ services:
     volumes_from:
      - web-data
   web-data:
-    build: .
+    image: meanjs/mean
+    # build: .
     entrypoint: /bin/true
     volumes:
      - ./:/opt/mean.js
