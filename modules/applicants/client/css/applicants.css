@@ -1,0 +1,52 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background: url(https://image.shutterstock.com/z/stock-photo-woman-holding-shopping-basket-in-supermarket-233691502.jpg);
+  background-size: cover;
+  height: 100%;
+  padding: 10px;
+}
+
+.content .container {
+  background: white;
+  border-radius: 3px;
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, .3);
+}
+
+.landing form {
+  padding-bottom: 15px;
+}
+.landing h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.landing .page-header {
+  text-align: center;
+}
+
+.landing-item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.landing-item-icon {
+  font-size: 28px;
+  flex: 0 0 50px;
+}
+.small .landing-item-icon {
+  font-size: 20px;
+}
+.landing-item-text {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+}
+.landing-item-title {
+  flex: 1 1 100%;
+  font-weight: bold;
+}
+.landing-item-description {
+  flex: 1 1 100%;
+}

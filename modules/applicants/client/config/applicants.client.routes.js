@@ -11,7 +11,7 @@
     $stateProvider
       .state('landing', {
         url: '/',
-        templateUrl: '/modules/applicants/client/views/form-applicant.client.view.html',
+        templateUrl: '/modules/applicants/client/views/landing-applicant.client.view.html',
         controller: 'ApplicantsController',
         controllerAs: 'vm',
         resolve: {

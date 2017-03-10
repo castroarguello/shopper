@@ -1,0 +1,115 @@
+<section class="landing">
+  <div class="page-header">
+    <h1>{{vm.applicant._id ? 'Edit Application' : 'Apply instantly and start today!'}}</h1>
+  </div>
+  <div class="page-content">
+    <div class="col-xs-6">
+      <div class="landing-mobile">
+        <h3>Earn money in 3 easy steps </h3>
+        <div class="landing-item">
+          <span class="landing-item-icon">
+            <!-- <i class="glyphicon glyphicon-ok"></i> -->
+            <i class="glyphicon glyphicon-share-alt"></i>
+          </span>
+          <span class="landing-item-text">
+            <span class="landing-item-title"> Apply 
+            </span>
+            <span class="landing-item-description">One click application.
+            </span>
+          </span>
+        </div>
+        <div class="landing-item">
+          <span class="landing-item-icon">
+            <i class="glyphicon glyphicon-shopping-cart"></i>
+          </span>
+          <span class="landing-item-text">
+            <span class="landing-item-title"> Shop </span>
+            <span class="landing-item-description">Easy and fun.</span>
+          </span>
+        </div>
+        <div class="landing-item">
+          <span class="landing-item-icon">
+            <i class="glyphicon glyphicon-usd"></i>
+          </span>
+          <span class="landing-item-text">
+            <span class="landing-item-title"> Earn </span>
+            <span class="landing-item-description"> Earn money helping others save time! </span>
+          </span>
+        </div>
+        <hr>
+        <div class="landing-item small">
+          <span class="landing-item-icon">
+            <i class="glyphicon glyphicon-user"></i>
+          </span>
+          <span class="landing-item-text">
+            <span class="landing-item-description text-muted"> 
+             <i>"I love this platform, it allows me to do what I love in my spare time and earn money every day!"<br>
+              <b>Rob from New York </b>
+             </i> 
+            <br>
+             </span>
+          </span>
+        </div>
+      </div>
+      <div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <form name="vm.form.applicantForm" class="form-vertical" ng-submit="vm.save(vm.form.applicantForm.$valid)" novalidate>
+        <fieldset>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group" show-errors>
+                <input name="name" type="text" ng-model="vm.applicant.name" id="name" class="form-control" placeholder="First Name" required>
+                <div ng-messages="vm.form.applicantForm.name.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required"> is required.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group" show-errors>
+                <input name="lastname" type="text" ng-model="vm.applicant.lastname" id="lastname" class="form-control" placeholder="Last Name" required>
+                <div ng-messages="vm.form.applicantForm.lastname.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required"> is required.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group" show-errors>
+            <input name="phone" type="text" ng-model="vm.applicant.phone" id="phone" class="form-control" placeholder="Cell Phone number" required>
+            <div ng-messages="vm.form.applicantForm.phone.$error" role="alert">
+              <p class="help-block error-text" ng-message="required"> is required.</p>
+            </div>
+          </div>
+          <div class="form-group" show-errors>
+            <input name="email" type="email" ng-model="vm.applicant.email" id="email" class="form-control" placeholder="Email" required>
+            <div ng-messages="vm.form.applicantForm.email.$error" role="alert">
+              <p class="help-block error-text" ng-message="required"> is required.</p>
+              <p class="help-block error-text" ng-message="email"> A valid email is required.</p>
+            </div>
+          </div>
+          <div class="form-group" show-errors>
+            <input name="zipcode" type="text" ng-model="vm.applicant.zipcode" id="zipcode" class="form-control" placeholder="Zip code" required>
+            <div ng-messages="vm.form.applicantForm.zipcode.$error" role="alert">
+              <p class="help-block error-text" ng-message="required"> is required.</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <input name="referral" type="text" ng-model="vm.applicant.referral" id="referral" class="form-control" placeholder="Referral code (optional)">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block">
+            Start 
+            <i class="glyphicon glyphicon-play"></i>
+            </button>
+          </div>
+          <div ng-show="vm.error" class="text-danger">
+            <strong ng-bind="vm.error"></strong>
+          </div>
+          <div class="small text-muted">
+            <p> We will use this information to communicate with you about your application. </p>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+</section>
