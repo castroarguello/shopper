@@ -6,10 +6,9 @@
     .module('applicants')
     .controller('ApplicantsController', ApplicantsController);
 
-  ApplicantsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'applicantResolve',
-    'WorkflowsService'];
+  ApplicantsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'applicantResolve'];
 
-  function ApplicantsController ($scope, $state, $window, Authentication, applicant, WorkflowsService) {
+  function ApplicantsController ($scope, $state, $window, Authentication, applicant) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -18,7 +17,15 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
-    vm.workflows = WorkflowsService.query();
+    vm.workflows = [
+      {id: 'applied', name: 'Applied'},
+      {id: 'quiz_started', name: 'Quiz Started'},
+      {id: 'quiz_completed', name: 'Quiz Completed'},
+      {id: 'onboarding_requested', name: 'Onboarding Requested'},
+      {id: 'onboarding_completed', name: 'Onboarding Completed'},
+      {id: 'hired', name: 'Hired'},
+      {id: 'rejected', name: 'Rejected'}
+    ];
 
     // Remove existing Applicant
     function remove() {
@@ -42,9 +49,15 @@
       }
 
       function successCallback(res) {
-        $state.go('applicants.view', {
-          applicantId: res._id
-        });
+        if (vm.authentication.user) {
+          $state.go('applicants.list', {
+            applicantId: res._id
+          });
+        } else {
+          $state.go('applicants.view', {
+            applicantId: res._id
+          });
+        }
       }
 
       function errorCallback(res) {

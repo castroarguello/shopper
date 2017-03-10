@@ -6,7 +6,6 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   Applicant = mongoose.model('Applicant'),
-  Workflow = mongoose.model('Workflow'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
 
@@ -98,23 +97,23 @@ exports.list = function(req, res) {
  * Applications Funnel
  */
 exports.funnels = function(req, res) {
-  Workflow.find().sort('-created').exec(function(err, workflows) {
-    if (err) {
-      return res.status(400).send({
-        message: errorHandler.getErrorMessage(err)
-      });
-    } else {
-      var response = workflows.map(function(d) {
-        return {
-          count: 0,
-          date: d.date,
-          status: d.id,
-          label: d.name
-        };
-      });
-      res.jsonp(response);
-    }
-  });
+  // Workflow.find().sort('-created').exec(function(err, workflows) {
+  //   if (err) {
+  //     return res.status(400).send({
+  //       message: errorHandler.getErrorMessage(err)
+  //     });
+  //   } else {
+  //     var response = workflows.map(function(d) {
+  //       return {
+  //         count: 0,
+  //         date: d.date,
+  //         status: d.id,
+  //         label: d.name
+  //       };
+  //     });
+  //     res.jsonp(response);
+  //   }
+  // });
 };
 
 /**
