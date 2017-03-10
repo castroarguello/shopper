@@ -67,3 +67,39 @@ var ApplicantSchema = new Schema({
 });
 
 mongoose.model('Applicant', ApplicantSchema);
+
+/**
+ * Status Schema
+ */
+var StatusSchema = new Schema({
+  application: {
+    type: Schema.ObjectId,
+    required: 'application ID is required'
+  },
+  from: {
+    type: String,
+    default: '',
+    required: 'Please fill Status name',
+    trim: true
+  },
+  status: {
+    type: String,
+    default: '',
+    required: 'Please fill Status machine name',
+    trim: true
+  },
+  week: {
+    type: Number,
+    default: 0
+  },
+  created: {
+    type: Date,
+    default: Date.now
+  },
+  user: {
+    type: Schema.ObjectId,
+    ref: 'User'
+  }
+});
+
+mongoose.model('Status', StatusSchema);

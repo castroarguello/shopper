@@ -1,0 +1,23 @@
+<section>
+  <div class="page-header">
+    <h1>Applications Analytics</h1>
+    <div class="list-controls form form-inline">
+      <input type="date" class="form-control" date-format="yyyy-mm-dd" ng-model="vm.start_date" ng-change="vm.update()">
+      <input type="date" class="form-control" date-format="yyyy-mm-dd" ng-model="vm.end_date" ng-change="vm.update()">
+    </div>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="(key, funnel) in vm.funnels"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Date ranges: {{ key}}
+        <span ng-bind="funnel.date | date:'mediumDate'"></span>
+      </small>
+      <p ng-repeat="(status, count) in funnel"> {{ vm.workflows[status] }} [{{status}}]: {{ count }} </p>
+      <h4 class="list-group-item-heading">{{funnel.name}} {{funnel.lastname}}</h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.funnels.$resolved && !vm.funnels">
+    No funnels for the selected date range.
+  </div>
+</section>
