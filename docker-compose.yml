@@ -2,9 +2,10 @@ version: '2'
 services:
   web:
     restart: always
-    image: meanjs/mean
-    # build: .
-    # container_name: meanjs
+    # image: meanjs/mean
+    build:
+      context: .
+      dockerfile: Dockerfile-local
     ports:
      - "3000:3000"
      - "5858:5858"
@@ -18,8 +19,9 @@ services:
     volumes_from:
      - web-data
   web-data:
-    image: meanjs/mean
-    # build: .
+    build:
+      context: .
+      dockerfile: Dockerfile-local
     entrypoint: /bin/true
     volumes:
      - ./:/opt/mean.js
