@@ -134,7 +134,7 @@ exports.funnels = function(req, res) {
   }
 
   var response = {};
-  var o = {query: filters };
+  var o = { query: filters };
   o.map = function () { emit(this.week, this.status) };
   o.reduce = function (k, vals) {
     var reducedObject = {};

@@ -17,7 +17,7 @@
         start_date: vm.start_date,
         end_date: vm.end_date
       });
-    }
+    };
 
     vm.update();
   }

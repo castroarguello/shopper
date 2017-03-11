@@ -9,7 +9,7 @@
   ApplicantsService.$inject = ['$resource'];
 
   function ApplicantsService($resource) {
-    var Applicants = $resource('/api/applicants/:applicantId', {applicantId: '@_id'}, {
+    var Applicants = $resource('/api/applicants/:applicantId', { applicantId: '@_id' }, {
       update: {
         method: 'PUT'
       },
@@ -28,17 +28,17 @@
       getWorkflows: function() {
         return [
           { id: 'applied', name: 'Applied' },
-          { id: 'quiz_started', name: 'Quiz  Started'},
-          { id: 'quiz_completed', name: 'Quiz  Completed'},
-          { id: 'onboarding_requested', name: 'Onboarding  Requested'},
-          { id: 'onboarding_completed', name: 'Onboarding  Completed'},
+          { id: 'quiz_started', name: 'Quiz  Started' },
+          { id: 'quiz_completed', name: 'Quiz  Completed' },
+          { id: 'onboarding_requested', name: 'Onboarding  Requested' },
+          { id: 'onboarding_completed', name: 'Onboarding  Completed' },
           { id: 'hired', name: 'Hired' },
           { id: 'rejected', name: 'Rejected' }
         ];
       },
       getFunnel: function (params) {
-        params.start_date = moment(params.start_date).format('YYYY-MM-DD')
-        params.end_date = moment(params.end_date).format('YYYY-MM-DD')
+        params.start_date = moment(params.start_date).format('YYYY-MM-DD');
+        params.end_date = moment(params.end_date).format('YYYY-MM-DD');
         return this.funnel(params);
       }
     });
